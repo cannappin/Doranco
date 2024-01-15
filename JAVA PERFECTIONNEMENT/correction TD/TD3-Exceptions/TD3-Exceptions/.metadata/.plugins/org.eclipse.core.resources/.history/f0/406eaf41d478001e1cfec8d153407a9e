@@ -1,0 +1,21 @@
+package division;
+
+import java.util.Random;
+
+public class Division {
+
+	public static void main(String[] args) {
+		Random r = new Random();
+		
+		for(int i = 0; i < 20;i++) {
+			int dividende = r.nextInt();
+			int diviseur = r.nextInt();
+			
+			System.out.println("Le dividende est :"+dividende);
+			System.out.println("Le diviseur est "+diviseur);
+			System.out.println("Le résultat est" +(dividende/diviseur));
+		} 
+		
+	}
+
+}

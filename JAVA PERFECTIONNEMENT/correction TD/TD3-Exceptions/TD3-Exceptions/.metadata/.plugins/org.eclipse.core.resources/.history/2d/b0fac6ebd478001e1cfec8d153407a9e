@@ -1,0 +1,7 @@
+package banque.model;
+
+public class Compte {
+	private String name;
+	private String numero;
+	private double solde;
+}

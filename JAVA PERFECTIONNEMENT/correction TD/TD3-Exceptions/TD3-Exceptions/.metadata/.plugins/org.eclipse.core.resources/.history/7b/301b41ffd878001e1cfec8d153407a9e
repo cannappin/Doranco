@@ -1,0 +1,14 @@
+package banque;
+
+import banque.model.Compte;
+
+public class Main {
+	public static void main(String[] args) {
+		Compte c1 = new Compte("Maurice Dupond", "10029344", 10108);
+		Compte c2 = new Compte("Fabrice Millot", "30499450", 1304);
+		Compte c3 = new Compte("Nora Excillia", "4059963", 300400);
+	
+		
+		
+	}
+}

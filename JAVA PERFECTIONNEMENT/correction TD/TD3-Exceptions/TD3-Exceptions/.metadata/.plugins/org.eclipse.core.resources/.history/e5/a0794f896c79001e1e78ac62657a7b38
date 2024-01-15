@@ -1,0 +1,26 @@
+package division;
+
+import java.util.Random;
+
+public class Division {
+
+	public static void main(String[] args) {
+		Random r = new Random();
+		
+		for(int i = 0; i < 20;i++) {
+			int dividende = r.nextInt(20);
+			int diviseur = r.nextInt(20);
+			
+			System.out.println("Le dividende est :"+dividende);
+			System.out.println("Le diviseur est "+diviseur);
+//			try {
+				System.out.println("Le résultat est" + (dividende/diviseur));
+//			} catch(ArithmeticException ex) {
+//				System.err.println("On ne divise pas par 0 !!!");
+//				ex.printStackTrace();
+//			}
+		} 
+		
+	}
+
+}

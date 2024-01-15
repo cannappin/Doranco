@@ -1,0 +1,5 @@
+package banque.utils;
+
+public final class MouvementUtils {
+	private MouvementUtils() {}
+}

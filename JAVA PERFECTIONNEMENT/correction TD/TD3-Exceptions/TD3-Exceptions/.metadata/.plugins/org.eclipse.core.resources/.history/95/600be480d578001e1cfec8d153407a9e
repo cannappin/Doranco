@@ -1,0 +1,11 @@
+package banque.utils;
+
+import banque.model.Compte;
+
+public final class MouvementUtils {
+	private MouvementUtils() {}
+	
+	public static void executerOperation(Compte source, Compte cible, double Somme) {
+		
+	}
+}

@@ -1,0 +1,24 @@
+package file;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.Scanner;
+
+public class LectureFichier {
+	public static void main(String[] args) {
+		//Ouvre le fichier liste_etudiants.txt
+		FileInputStream fis = new FileInputStream(new File("liste_etudiants.txt"));
+		//Déclare le tableau d'étudiants (ici on en a 15)
+	
+		//Initialise le scanner
+		Scanner sc = new Scanner(fis);
+		int i=0;
+		//Lit le fichier et créé la liste d'objets étudiant
+		while(sc.hasNextLine()) {
+			//Explose la ligne pour récupérer les valeurs
+			System.out.println();
+		}
+		sc.close();
+
+	}
+}

@@ -1,0 +1,26 @@
+package banque.utils;
+
+import banque.model.Compte;
+
+public final class MouvementUtils {
+	private MouvementUtils() {}
+	
+	public static void executerOperation(Compte source, Compte cible, double montant) {
+		//Sauvegarde de l'état courant des solde avant opération
+		double soldeCourantSource = source.getSolde();
+		double soldeCourantCible = cible.getSolde();
+		
+		//Débit de la source
+		source.setSolde(source.getSolde() + montant);
+		//Crédit de la cible
+		source.setSolde(source.getSolde() + montant);
+		
+		
+	}
+	
+	private static void simulerErreur() {
+		
+	}
+	
+	private static class VirementException extends Exception {}
+}

@@ -1,0 +1,54 @@
+package banque.utils;
+
+import java.util.Random;
+
+import banque.model.Compte;
+
+public final class VirementUtils {
+	//Empeche l'instanciation
+	private VirementUtils() {}
+	
+	
+	public static void executerOperation(Compte source, Compte cible, double montant) {
+		
+		System.out.println("-------------------------------------------------------");
+		System.out.println("Virement d'un montant de "+montant+" entre les comptes:");
+		System.out.println(source);
+		System.out.println(cible);
+		//Sauvegarde de l'état courant des solde avant opération
+		double soldeCourantSource = source.getSolde();
+		double soldeCourantCible = cible.getSolde();
+		
+		//Débit de la source
+		try {
+			simulerErreur();		
+			source.setSolde(source.getSolde() + montant);
+			//Crédit de la cible
+			simulerErreur();
+			source.setSolde(source.getSolde() + montant);
+			simulerErreur();
+		} catch (VirementException e) {
+			System.out.println("Erreur survenue: "+e.getMessage());
+			System.out.println("Remise à zero des comptes: ");
+			System.out.println(cible);
+			//Exception apparue donc il faut remettre les solde dans l'état initial
+			source.setSolde(soldeCourantSource);
+			source.setSolde(soldeCourantCible);
+			System.err.println();
+		}
+	}
+	
+	private static void simulerErreur() throws VirementException {
+		Random r = new Random();
+		if(r.nextBoolean()){
+        	throw new VirementException("Une erreur est survenue lors de la transaction");
+        }
+	}
+	
+	private static class VirementException extends Exception {
+
+		public VirementException(String string) {
+			super(string);
+		}
+	}
+}
